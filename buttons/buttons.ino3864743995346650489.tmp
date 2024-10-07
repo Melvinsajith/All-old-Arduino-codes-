@@ -1,0 +1,22 @@
+int ledpin = 8;
+int buttonpin = 12;
+int buttonRead;
+int dt = 250;
+
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600);
+pinMode(ledpin,OUTPUT);
+pinMode(buttonpin,INPUT);
+}
+  // put your main code here, to run repeatedly:
+buttonRead = digitalRead(buttonpin);
+Serial.println(buttonRead);
+delay(dt);
+if (buttonRead == 1){
+  digitalWrite(ledpin,LOW);
+}
+if (buttonRead == 0){
+  digitalWrite(ledpin,HIGH);
+} 
+}
