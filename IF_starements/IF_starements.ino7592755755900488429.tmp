@@ -1,0 +1,27 @@
+int myvoltpin = A2;
+int readval;
+float V2;
+int dt  =250;
+int redpin = 8;
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600);
+pinMode(myvoltpin,INPUT);
+pinMode(redpin,OUTPUT);
+}
+
+void loop() {
+  
+readval = analogRead(myvoltpin);
+
+Serial.print("potentiometer voltage is = ");
+Serial.println(V2);
+if(V2>1000){
+ digitalWrite(redpin,HIGH);
+}
+if(V2<950){
+ digitalWrite(redpin,LOW);
+}
+
+delay(dt);
+}

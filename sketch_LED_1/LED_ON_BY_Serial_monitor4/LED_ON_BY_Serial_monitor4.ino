@@ -1,0 +1,39 @@
+int redpin = 12;
+int greenpin = 13;
+int yellowpin = 11;
+String colour;
+String msg ="which colour LED you want to glow red,green or yellow";
+
+
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600);
+pinMode(redpin,OUTPUT);
+pinMode(greenpin,OUTPUT);
+pinMode(yellowpin ,OUTPUT);
+}
+
+void loop() {
+  Serial.println(msg);
+while(Serial.available()==0){
+  
+}
+colour = Serial.readString();
+
+if (colour =="red"){
+  digitalWrite(redpin,HIGH);
+  digitalWrite(greenpin,LOW);
+  digitalWrite(yellowpin,LOW);
+}
+if (colour =="green"){
+  digitalWrite(redpin,LOW);
+  digitalWrite(greenpin,HIGH);
+  digitalWrite(yellowpin,LOW);
+}
+if (colour =="yellow"){
+  digitalWrite(redpin,LOW);
+  digitalWrite(greenpin,LOW);
+  digitalWrite(yellowpin,HIGH);
+}
+
+}

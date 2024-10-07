@@ -1,0 +1,23 @@
+int tpin = 5;
+int epin = 3;
+int traveltime;
+int buzz = 10;
+void setup() {
+  // put your setup code here, to run once:
+pinMode(tpin,OUTPUT);
+pinMode(buzz,OUTPUT);
+pinMode(epin,INPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+digitalWrite(tpin,LOW);
+delayMicroseconds(10);
+digitalWrite(tpin,HIGH);
+delayMicroseconds(10);
+digitalWrite(tpin,LOW);
+traveltime = pulseIn(epin,HIGH);
+Serial.println(traveltime);
+delay(500); 
+}

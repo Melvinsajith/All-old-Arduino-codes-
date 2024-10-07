@@ -1,0 +1,21 @@
+int tpin = 12;
+int epin = 11;
+int traveltime;
+void setup() {
+  // put your setup code here, to run once:
+pinMode(tpin,OUTPUT);
+pinMode(epin,INPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+digitalWrite(tpin,LOW);
+delayMicroseconds(10);
+digitalWrite(tpin,HIGH);
+delay(10);
+digitalWrite(tpin,LOW);
+traveltime = analogRead(epin);
+Serial.println(traveltime);
+delay(100);
+}

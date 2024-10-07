@@ -1,0 +1,25 @@
+ //BINARY COUNTER USING LED
+ //USE 4 LED
+int pin_1 = 2;
+int pin_2 = 4;
+int pin_3 = 8;
+int pin_4 = 13;
+
+
+void setup() {
+pinMode(pin_1,OUTPUT);
+pinMode(pin_2,OUTPUT);
+pinMode(pin_3,OUTPUT);
+pinMode(pin_4,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+digitalWrite(pin_1,LOW);
+digitalWrite(pin_2,LOW);
+digitalWrite(pin_3,HIGH);
+digitalWrite(pin_4,HIGH);
+delay(1000);
+
+
+}

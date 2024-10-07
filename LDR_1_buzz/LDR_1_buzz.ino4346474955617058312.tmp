@@ -1,0 +1,22 @@
+int lightpin = A0;
+int buzzpin = 8;
+int delayt;
+int lighval;
+void setup() {
+  // put your setup code here, to run once:
+pinMode(lightpin,INPUT);
+pinMode(buzzpin,OUTPUT);
+Serial.begin(9600);
+}
+
+
+void loop() {
+  // put your main code here, to run repeatedly:
+lighval = analogRead(lightpin);
+delayt = (9./550.)*lighval - (9*200./550.)+1.;
+Serial.println(lighval);
+digitalWrite(buzzpin,HIGH);
+delay(delayt);
+digitalWrite(buzzpin,LOW);
+delay(delayt);
+}
